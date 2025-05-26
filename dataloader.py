@@ -36,6 +36,7 @@ np.set_printoptions(suppress=True, precision=5)
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 print(device)
 
+# 検証データ用
 test_transform = transforms.Compose([
     transforms.Resize(224,224),
     transforms.CenterCrop(224,224),
@@ -43,16 +44,21 @@ test_transform = transforms.Compose([
     transforms.Normalize([0.5,0.5])
     ])
 
+# 訓練データ用
 train_transform = transforms.Compose([
     transforms.RandomHorizontalFlip(p=0.5),
     transforms.Resize(224,224),
     transforms.CenterCrop(224,224),
     transforms.ToTensor(),
     transforms.Normalize(0.5,0.5),
-    transforms.RandomErasing(p=0.5, scale=(9.02, 0.33), ratio=(0.3, 3.3), value=0, inplace=False)
+    transforms.RandomErasing(p=0.5, scale=(0.02, 0.33), ratio=(0.3, 3.3), value=0, inplace=False)
 ])
 
-train_dataset = datasets.ImageFolder(root='pokemon_dataset', transform=train_transform)
-val_dataset = datasets.ImageFolder(root='pokemon_dataset', transform=test_transform)
+# データセット定義
+data_dir = 'pokemon_dataset'
 
-train_dataloader = 
+import os
+train_dir = os.path.join(data_dir, 'train')
+test_dir = os.path.join(data_dir, 'test')
+
+classes = ['pikachu', 'rizar']
