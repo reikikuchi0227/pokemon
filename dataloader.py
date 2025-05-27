@@ -36,6 +36,8 @@ np.set_printoptions(suppress=True, precision=5)
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 print(device)
 
+
+
 # 検証データ用
 test_transform = transforms.Compose([
     transforms.Resize(224,224),
@@ -55,10 +57,13 @@ train_transform = transforms.Compose([
 ])
 
 # データセット定義
-data_dir = 'pokemon_dataset'
 
-import os
-train_dir = os.path.join(data_dir, 'train')
-test_dir = os.path.join(data_dir, 'test')
 
-classes = ['pikachu', 'rizar']
+data_dir = 'img\pokemon_dataset'
+
+
+batch_size = 32
+
+train_loader = DataLoader()
+
+classes = ['025_pikachu','006_Charizard', '658_Greninja']
