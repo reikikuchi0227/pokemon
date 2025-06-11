@@ -71,11 +71,16 @@ test_transform = transforms.Compose([
 
 
 # データセット定義
-classes = ['006_Charizard', '025_pikachu', '658_Greninja']
+# classes = ['006_Charizard', '025_pikachu', '658_Greninja']
+classes = ['pikachu', '026_raichu', '172_pichu', '417_pachirisu', '587_emolga', '702_dedenne', '777_togedemaru', '778_mimikyu']
 
-train_dataset = ImageFolder(root='pokemon_dataset/split_dataset/train',transform=train_transform)
-val_dataset = ImageFolder(root='pokemon_dataset/split_dataset/val', transform=val_transform)
-test_dataset = ImageFolder(root='pokemon_dataset/split_dataset/test', transform=test_transform)
+# train_dataset = ImageFolder(root='pokemon_dataset/split_dataset/train',transform=train_transform)
+# val_dataset = ImageFolder(root='pokemon_dataset/split_dataset/val', transform=val_transform)
+# test_dataset = ImageFolder(root='pokemon_dataset/split_dataset/test', transform=test_transform)
+
+train_dataset = ImageFolder(root='pokemon_dataset/split_dataset(similar)/train',transform=train_transform)
+val_dataset = ImageFolder(root='pokemon_dataset/split_dataset(similar)/val', transform=val_transform)
+test_dataset = ImageFolder(root='pokemon_dataset/split_dataset(similar)/test', transform=test_transform)
 
 # データ数表示
 # print(f'訓練データ: {len(train_dataset)}件')

@@ -26,4 +26,4 @@ def split_dataset(original_dir, output_dir, train_ratio=0.7, val_ratio=0.15, tes
             for img_path in split_imgs:
                 shutil.copy(img_path, split_cls_dir)
 
-split_dataset('pokemon_dataset/img', 'pokemon_dataset/split_dataset')
+split_dataset('pokemon_dataset/img_similar', 'pokemon_dataset/split_dataset(similar)')
