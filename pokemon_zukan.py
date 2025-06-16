@@ -138,7 +138,7 @@ history = np.zeros((0, 5))
 
 
 # 学習の実行
-num_epochs = 5
+num_epochs = 10
 history = fit(net, optimizer, criterion, num_epochs, train_loader, test_loader, device, history)
 
 # 結果サマリー

@@ -19,7 +19,7 @@ from torch.utils.data import Dataset, DataLoader
 import torchvision.datasets as datasets
 from tqdm.auto import tqdm
 
-# 損失関数値計算用
+# 損失関数値計算用 
 def eval_loss(loader, device, net, criterion):
   
     # DataLoaderから最初の1セットを取得する
